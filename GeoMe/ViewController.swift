@@ -62,7 +62,9 @@ extension ViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
             let distance = distanceToBishkek(location: location)
-            distanceLabel.text = "\(distance/1000) km"
+            let nf = NumberFormatter()
+            nf.numberStyle = .decimal
+            distanceLabel.text = "\(distance/1000) km to Bishkek"
             print(distance/1000)
         }
     }
