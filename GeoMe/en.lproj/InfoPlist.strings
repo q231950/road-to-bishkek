@@ -1,0 +1,8 @@
+/* 
+  InfoPlist.strings
+  GeoMe
+
+  Created by Martin Kim Dung-Pham on 25.05.17.
+  Copyright © 2017 elbedev.com. All rights reserved.
+*/
+"NSLocationWhenInUseUsageDescription" = "Location is required for displaying distance";
