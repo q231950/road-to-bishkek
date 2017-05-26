@@ -23,6 +23,10 @@ class DistanceViewController: UIViewController {
         handleCurrentLocationAuthorizationStatus(CLLocationManager.authorizationStatus())
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     private func handleCurrentLocationAuthorizationStatus(_ status: CLAuthorizationStatus) {
         switch status {
         case .notDetermined:

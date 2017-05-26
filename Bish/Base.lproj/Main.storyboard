@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="JkW-TK-3TP">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Distance View Controller-->
+        <!--distance-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="DistanceViewController" customModule="Bish" customModuleProvider="target" sceneMemberID="viewController">
@@ -34,13 +34,57 @@
                             <constraint firstItem="Ebj-7s-R6y" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gGv-dd-mEV"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="distance" image="distance" id="rHe-le-atb"/>
                     <connections>
                         <outlet property="distanceLabel" destination="Ebj-7s-R6y" id="w5Q-2Z-n43"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="37.600000000000001" y="111.99400299850076"/>
+            <point key="canvasLocation" x="1095" y="161"/>
+        </scene>
+        <!--credits-->
+        <scene sceneID="JeD-rw-8Nt">
+            <objects>
+                <viewController id="cto-Ne-hyd" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yW5-S9-sfJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="N8I-kH-rPS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2c6-7D-m0C">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="credits" image="credits" id="FgH-IP-GcS"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FQK-Xp-fEH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1095" y="867"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="bp4-TE-BC1">
+            <objects>
+                <tabBarController id="JkW-TK-3TP" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="Xot-E0-iWa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="h3s-6M-Ncq"/>
+                        <segue destination="cto-Ne-hyd" kind="relationship" relationship="viewControllers" id="JMx-X6-QFJ"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fry-wW-atQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="145" y="539"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="credits" width="30" height="30"/>
+        <image name="distance" width="30" height="30"/>
+    </resources>
 </document>
