@@ -46,7 +46,7 @@
         <!--credits-->
         <scene sceneID="JeD-rw-8Nt">
             <objects>
-                <viewController id="cto-Ne-hyd" sceneMemberID="viewController">
+                <viewController id="cto-Ne-hyd" customClass="CreditsViewController" customModule="Bish" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yW5-S9-sfJ"/>
                         <viewControllerLayoutGuide type="bottom" id="N8I-kH-rPS"/>
