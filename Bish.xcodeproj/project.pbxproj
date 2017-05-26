@@ -7,27 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3B9191D51ED77DF50036A87C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3B9191D71ED77DF50036A87C /* InfoPlist.strings */; };
-		3BC4E1A01ED772C8001636D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC4E19F1ED772C8001636D1 /* AppDelegate.swift */; };
-		3BC4E1A21ED772C8001636D1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC4E1A11ED772C8001636D1 /* ViewController.swift */; };
-		3BC4E1A51ED772C8001636D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BC4E1A31ED772C8001636D1 /* Main.storyboard */; };
-		3BC4E1A71ED772C8001636D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BC4E1A61ED772C8001636D1 /* Assets.xcassets */; };
-		3BC4E1AA1ED772C8001636D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BC4E1A81ED772C8001636D1 /* LaunchScreen.storyboard */; };
+		3B3A27331ED8C6E00065AF68 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3A27241ED8C6E00065AF68 /* AppDelegate.swift */; };
+		3B3A27341ED8C6E00065AF68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B3A27251ED8C6E00065AF68 /* Assets.xcassets */; };
+		3B3A27351ED8C6E00065AF68 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B3A27261ED8C6E00065AF68 /* LaunchScreen.storyboard */; };
+		3B3A27361ED8C6E00065AF68 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B3A27281ED8C6E00065AF68 /* Main.storyboard */; };
+		3B3A27371ED8C6E00065AF68 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3B3A272A1ED8C6E00065AF68 /* InfoPlist.strings */; };
+		3B3A27381ED8C6E00065AF68 /* LaunchScreen.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3B3A272C1ED8C6E00065AF68 /* LaunchScreen.strings */; };
+		3B3A27391ED8C6E00065AF68 /* Main.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3B3A272E1ED8C6E00065AF68 /* Main.strings */; };
+		3B3A273A1ED8C6E00065AF68 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B3A27311ED8C6E00065AF68 /* Info.plist */; };
+		3B3A273B1ED8C6E00065AF68 /* DistanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3A27321ED8C6E00065AF68 /* DistanceViewController.swift */; };
 		3BC4E1B31ED77309001636D1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BC4E1B21ED77309001636D1 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3B9191D11ED776B60036A87C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3B9191D61ED77DF50036A87C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		3B9191D91ED77E440036A87C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
-		3B9191DA1ED77E440036A87C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		3B9191DB1ED77E440036A87C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		3BC4E19C1ED772C8001636D1 /* GeoMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeoMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		3BC4E19F1ED772C8001636D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3BC4E1A11ED772C8001636D1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		3BC4E1A41ED772C8001636D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		3BC4E1A61ED772C8001636D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		3BC4E1A91ED772C8001636D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3B3A27241ED8C6E00065AF68 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3B3A27251ED8C6E00065AF68 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3B3A27271ED8C6E00065AF68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3B3A27291ED8C6E00065AF68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3B3A272B1ED8C6E00065AF68 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3B3A272D1ED8C6E00065AF68 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		3B3A272F1ED8C6E00065AF68 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		3B3A27301ED8C6E00065AF68 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3B3A27311ED8C6E00065AF68 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B3A27321ED8C6E00065AF68 /* DistanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistanceViewController.swift; sourceTree = "<group>"; };
+		3BC4E19C1ED772C8001636D1 /* Bish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BC4E1B21ED77309001636D1 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -43,10 +46,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B0D2DD61ED8C83900ADAA24 /* Distance View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3B3A27321ED8C6E00065AF68 /* DistanceViewController.swift */,
+			);
+			name = "Distance View Controller";
+			sourceTree = "<group>";
+		};
+		3B3A27231ED8C6E00065AF68 /* Bish */ = {
+			isa = PBXGroup;
+			children = (
+				3B3A27241ED8C6E00065AF68 /* AppDelegate.swift */,
+				3B0D2DD61ED8C83900ADAA24 /* Distance View Controller */,
+				3B3A27251ED8C6E00065AF68 /* Assets.xcassets */,
+				3B3A27261ED8C6E00065AF68 /* LaunchScreen.storyboard */,
+				3B3A27281ED8C6E00065AF68 /* Main.storyboard */,
+				3B3A272A1ED8C6E00065AF68 /* InfoPlist.strings */,
+				3B3A272C1ED8C6E00065AF68 /* LaunchScreen.strings */,
+				3B3A272E1ED8C6E00065AF68 /* Main.strings */,
+				3B3A27311ED8C6E00065AF68 /* Info.plist */,
+			);
+			path = Bish;
+			sourceTree = "<group>";
+		};
 		3BC4E1931ED772C8001636D1 = {
 			isa = PBXGroup;
 			children = (
-				3BC4E19E1ED772C8001636D1 /* GeoMe */,
+				3B3A27231ED8C6E00065AF68 /* Bish */,
 				3BC4E19D1ED772C8001636D1 /* Products */,
 				3BC4E1B11ED77309001636D1 /* Frameworks */,
 			);
@@ -55,23 +82,9 @@
 		3BC4E19D1ED772C8001636D1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3BC4E19C1ED772C8001636D1 /* GeoMe.app */,
+				3BC4E19C1ED772C8001636D1 /* Bish.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		3BC4E19E1ED772C8001636D1 /* GeoMe */ = {
-			isa = PBXGroup;
-			children = (
-				3BC4E19F1ED772C8001636D1 /* AppDelegate.swift */,
-				3BC4E1A11ED772C8001636D1 /* ViewController.swift */,
-				3BC4E1A31ED772C8001636D1 /* Main.storyboard */,
-				3BC4E1A61ED772C8001636D1 /* Assets.xcassets */,
-				3BC4E1A81ED772C8001636D1 /* LaunchScreen.storyboard */,
-				3B9191D11ED776B60036A87C /* Info.plist */,
-				3B9191D71ED77DF50036A87C /* InfoPlist.strings */,
-			);
-			path = GeoMe;
 			sourceTree = "<group>";
 		};
 		3BC4E1B11ED77309001636D1 /* Frameworks */ = {
@@ -85,9 +98,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3BC4E19B1ED772C8001636D1 /* GeoMe */ = {
+		3BC4E19B1ED772C8001636D1 /* Bish */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3BC4E1AE1ED772C8001636D1 /* Build configuration list for PBXNativeTarget "GeoMe" */;
+			buildConfigurationList = 3BC4E1AE1ED772C8001636D1 /* Build configuration list for PBXNativeTarget "Bish" */;
 			buildPhases = (
 				3BC4E1981ED772C8001636D1 /* Sources */,
 				3BC4E1991ED772C8001636D1 /* Frameworks */,
@@ -97,9 +110,9 @@
 			);
 			dependencies = (
 			);
-			name = GeoMe;
+			name = Bish;
 			productName = GeoMe;
-			productReference = 3BC4E19C1ED772C8001636D1 /* GeoMe.app */;
+			productReference = 3BC4E19C1ED772C8001636D1 /* Bish.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -119,7 +132,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3BC4E1971ED772C8001636D1 /* Build configuration list for PBXProject "GeoMe" */;
+			buildConfigurationList = 3BC4E1971ED772C8001636D1 /* Build configuration list for PBXProject "Bish" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -133,7 +146,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3BC4E19B1ED772C8001636D1 /* GeoMe */,
+				3BC4E19B1ED772C8001636D1 /* Bish */,
 			);
 		};
 /* End PBXProject section */
@@ -143,10 +156,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3BC4E1AA1ED772C8001636D1 /* LaunchScreen.storyboard in Resources */,
-				3B9191D51ED77DF50036A87C /* InfoPlist.strings in Resources */,
-				3BC4E1A71ED772C8001636D1 /* Assets.xcassets in Resources */,
-				3BC4E1A51ED772C8001636D1 /* Main.storyboard in Resources */,
+				3B3A27361ED8C6E00065AF68 /* Main.storyboard in Resources */,
+				3B3A27371ED8C6E00065AF68 /* InfoPlist.strings in Resources */,
+				3B3A27341ED8C6E00065AF68 /* Assets.xcassets in Resources */,
+				3B3A27391ED8C6E00065AF68 /* Main.strings in Resources */,
+				3B3A27381ED8C6E00065AF68 /* LaunchScreen.strings in Resources */,
+				3B3A27351ED8C6E00065AF68 /* LaunchScreen.storyboard in Resources */,
+				3B3A273A1ED8C6E00065AF68 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,39 +173,53 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3BC4E1A21ED772C8001636D1 /* ViewController.swift in Sources */,
-				3BC4E1A01ED772C8001636D1 /* AppDelegate.swift in Sources */,
+				3B3A273B1ED8C6E00065AF68 /* DistanceViewController.swift in Sources */,
+				3B3A27331ED8C6E00065AF68 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		3B9191D71ED77DF50036A87C /* InfoPlist.strings */ = {
+		3B3A27261ED8C6E00065AF68 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				3B9191D61ED77DF50036A87C /* en */,
-				3B9191DB1ED77E440036A87C /* de */,
+				3B3A27271ED8C6E00065AF68 /* Base */,
 			);
-			name = InfoPlist.strings;
+			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		3BC4E1A31ED772C8001636D1 /* Main.storyboard */ = {
+		3B3A27281ED8C6E00065AF68 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				3BC4E1A41ED772C8001636D1 /* Base */,
-				3B9191D91ED77E440036A87C /* de */,
+				3B3A27291ED8C6E00065AF68 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		3BC4E1A81ED772C8001636D1 /* LaunchScreen.storyboard */ = {
+		3B3A272A1ED8C6E00065AF68 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				3BC4E1A91ED772C8001636D1 /* Base */,
-				3B9191DA1ED77E440036A87C /* de */,
+				3B3A272B1ED8C6E00065AF68 /* de */,
+				3B3A27301ED8C6E00065AF68 /* en */,
 			);
-			name = LaunchScreen.storyboard;
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		3B3A272C1ED8C6E00065AF68 /* LaunchScreen.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3B3A272D1ED8C6E00065AF68 /* de */,
+			);
+			name = LaunchScreen.strings;
+			sourceTree = "<group>";
+		};
+		3B3A272E1ED8C6E00065AF68 /* Main.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3B3A272F1ED8C6E00065AF68 /* de */,
+			);
+			name = Main.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -297,9 +327,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = X29V4JPQ55;
-				INFOPLIST_FILE = "$(SRCROOT)/GeoMe/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Bish/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.elbedev.GeoMe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.elbedev.bish;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -310,9 +340,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = X29V4JPQ55;
-				INFOPLIST_FILE = "$(SRCROOT)/GeoMe/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Bish/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.elbedev.GeoMe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.elbedev.bish;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -321,7 +351,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3BC4E1971ED772C8001636D1 /* Build configuration list for PBXProject "GeoMe" */ = {
+		3BC4E1971ED772C8001636D1 /* Build configuration list for PBXProject "Bish" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3BC4E1AC1ED772C8001636D1 /* Debug */,
@@ -330,7 +360,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3BC4E1AE1ED772C8001636D1 /* Build configuration list for PBXNativeTarget "GeoMe" */ = {
+		3BC4E1AE1ED772C8001636D1 /* Build configuration list for PBXNativeTarget "Bish" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3BC4E1AF1ED772C8001636D1 /* Debug */,

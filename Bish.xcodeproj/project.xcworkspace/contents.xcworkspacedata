@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:GeoMe.xcodeproj">
+      location = "self:/Users/kim/Development/GeoMe/Bish.xcodeproj">
    </FileRef>
 </Workspace>
