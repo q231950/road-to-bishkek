@@ -11,13 +11,14 @@ import CoreLocation
 
 class DistanceViewController: UIViewController {
     
-    private let kBigTextFontSize: CGFloat = 60
-    private let kBigTextFontName: String = "Menlo-Bold"
-    private let kSmallTextFontSize: CGFloat = 32
-    private let kSmallTextFontName: String = "Menlo"
+    @IBOutlet weak var distanceLabel: UILabel!
     
     private let manager = CLLocationManager()
-    @IBOutlet weak var distanceLabel: UILabel!
+    fileprivate var viewModel: DistanceViewModel? {
+        didSet {
+            distanceLabel.attributedText = viewModel?.attributedString
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,74 +55,6 @@ class DistanceViewController: UIViewController {
         //print("\(location.altitude) - \(bishkek.altitude)")
         return location.distance(from: bishkek)
     }
-    
-    fileprivate func updateWith(_ distance: CLLocationDistance) {
-        
-        let combinedString = NSMutableAttributedString()
-        
-        let kilometers = attributedKilometersStringWith(distance)
-        combinedString.append(kilometers)
-        
-        let meters = attributedMetersStringWith(distance)
-        combinedString.append(meters)
-        
-        let centimeters = attributedCentimetersStringWith(distance)
-        combinedString.append(centimeters)
-        
-        let city = attributedCityString(name: "Bishkek")
-        combinedString.append(city)
-
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.alignment = .left
-
-        let attributes = [NSParagraphStyleAttributeName: paragraphStyle]
-        combinedString.addAttributes(attributes, range: NSMakeRange(0, combinedString.length))
-
-        distanceLabel.attributedText = combinedString
-    }
-    
-    private func attributedKilometersStringWith(_ distance: CLLocationDistance) -> NSAttributedString {
-        return attributedUnitString(unit: "kilometers", value: Int(distance.divided(by: 1000).rounded(.up)))
-    }
-    
-    private func attributedMetersStringWith(_ distance: CLLocationDistance) -> NSAttributedString {
-        return attributedUnitString(unit: "meters", value: Int(distance.truncatingRemainder(dividingBy: 1000)))
-    }
-    
-    private func attributedCentimetersStringWith(_ distance: CLLocationDistance) -> NSAttributedString {
-        return attributedUnitString(unit: "centimeters", value: Int(distance.multiplied(by: 100).truncatingRemainder(dividingBy: 100)))
-    }
-    
-    private func bigTextAttributes() -> [String: Any] {
-        return  [NSFontAttributeName: UIFont.init(name: kBigTextFontName, size: kBigTextFontSize)!,
-                 NSForegroundColorAttributeName: UIColor.white]
-    }
-    
-    private func smallTextAttributes() -> [String: Any] {
-        return [NSFontAttributeName: UIFont.init(name: kSmallTextFontName, size: kSmallTextFontSize)!,
-                NSForegroundColorAttributeName: UIColor.white]
-    }
-
-    private func attributedUnitString(unit: String, value: Int) -> NSAttributedString {
-        
-        let valueString = NSAttributedString(string: "\(value)", attributes: bigTextAttributes())
-        let unitString = NSAttributedString(string: "\(unit)", attributes: smallTextAttributes())
-        
-        let combinedString = NSMutableAttributedString()
-        combinedString.append(valueString)
-        combinedString.append(unitString)
-        return combinedString
-    }
-    
-    private func attributedCityString(name: String) -> NSAttributedString {
-        let valueString = NSAttributedString(string: "to", attributes: smallTextAttributes())
-        let unitString = NSAttributedString(string: "\(name)", attributes: bigTextAttributes())
-        
-        let combinedString = NSMutableAttributedString()
-        combinedString.append(valueString)
-        combinedString.append(unitString)
-        return combinedString
-    }
 }
 
 extension DistanceViewController: CLLocationManagerDelegate {
@@ -144,7 +77,7 @@ extension DistanceViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
             let distance = distanceToBishkek(location: location)
-            updateWith(distance)
+            self.viewModel = DistanceViewModel(distance: distance)
             print(distance)
         }
     }
