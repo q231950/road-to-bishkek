@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,8 +22,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ebj-7s-R6y">
-                                <rect key="frame" x="159" y="322.5" width="57.5" height="22.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ebj-7s-R6y">
+                                <rect key="frame" x="21" y="25" width="333" height="22.5"/>
                                 <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="19"/>
                                 <color key="textColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -30,8 +31,11 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Ebj-7s-R6y" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="caC-xY-JPh"/>
+                            <constraint firstItem="Ebj-7s-R6y" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="5" id="0TP-HB-7wh"/>
+                            <constraint firstItem="Ebj-7s-R6y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="5" id="GtV-jR-ReG"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Ebj-7s-R6y" secondAttribute="bottom" constant="5" id="g73-xn-SLJ"/>
                             <constraint firstItem="Ebj-7s-R6y" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gGv-dd-mEV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ebj-7s-R6y" secondAttribute="trailing" constant="5" id="jxm-A7-h9O"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="distance" image="distance" id="rHe-le-atb"/>

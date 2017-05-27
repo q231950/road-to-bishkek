@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3B0D2DD91ED8D32900ADAA24 /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0D2DD81ED8D32900ADAA24 /* CreditsViewController.swift */; };
+		3B0D2DDB1ED9D5D200ADAA24 /* DistanceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0D2DDA1ED9D5D200ADAA24 /* DistanceViewModel.swift */; };
 		3B3A27331ED8C6E00065AF68 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3A27241ED8C6E00065AF68 /* AppDelegate.swift */; };
 		3B3A27341ED8C6E00065AF68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B3A27251ED8C6E00065AF68 /* Assets.xcassets */; };
 		3B3A27351ED8C6E00065AF68 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B3A27261ED8C6E00065AF68 /* LaunchScreen.storyboard */; };
@@ -15,13 +16,13 @@
 		3B3A27371ED8C6E00065AF68 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3B3A272A1ED8C6E00065AF68 /* InfoPlist.strings */; };
 		3B3A27381ED8C6E00065AF68 /* LaunchScreen.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3B3A272C1ED8C6E00065AF68 /* LaunchScreen.strings */; };
 		3B3A27391ED8C6E00065AF68 /* Main.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3B3A272E1ED8C6E00065AF68 /* Main.strings */; };
-		3B3A273A1ED8C6E00065AF68 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B3A27311ED8C6E00065AF68 /* Info.plist */; };
 		3B3A273B1ED8C6E00065AF68 /* DistanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3A27321ED8C6E00065AF68 /* DistanceViewController.swift */; };
 		3BC4E1B31ED77309001636D1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BC4E1B21ED77309001636D1 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3B0D2DD81ED8D32900ADAA24 /* CreditsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
+		3B0D2DDA1ED9D5D200ADAA24 /* DistanceViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistanceViewModel.swift; sourceTree = "<group>"; };
 		3B3A27241ED8C6E00065AF68 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B3A27251ED8C6E00065AF68 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B3A27271ED8C6E00065AF68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -52,6 +53,7 @@
 			isa = PBXGroup;
 			children = (
 				3B3A27321ED8C6E00065AF68 /* DistanceViewController.swift */,
+				3B0D2DDA1ED9D5D200ADAA24 /* DistanceViewModel.swift */,
 			);
 			name = "Distance View Controller";
 			sourceTree = "<group>";
@@ -173,7 +175,6 @@
 				3B3A27391ED8C6E00065AF68 /* Main.strings in Resources */,
 				3B3A27381ED8C6E00065AF68 /* LaunchScreen.strings in Resources */,
 				3B3A27351ED8C6E00065AF68 /* LaunchScreen.storyboard in Resources */,
-				3B3A273A1ED8C6E00065AF68 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B3A273B1ED8C6E00065AF68 /* DistanceViewController.swift in Sources */,
+				3B0D2DDB1ED9D5D200ADAA24 /* DistanceViewModel.swift in Sources */,
 				3B0D2DD91ED8D32900ADAA24 /* CreditsViewController.swift in Sources */,
 				3B3A27331ED8C6E00065AF68 /* AppDelegate.swift in Sources */,
 			);
