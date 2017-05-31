@@ -16,9 +16,9 @@ class WeatherViewController: UIViewController {
         super.viewDidLoad()
         
         let weatherProvider = WeatherProvider()
-        weatherProvider.weather(in: "bishkek") { (json: Any?, error: Error?) in
+        weatherProvider.weather(in: "bishkek") { (weatherViewModel: WeatherViewModel?, error: Error?) in
             DispatchQueue.main.async {
-                self.textView.text = "\n\(String(describing: json))"
+                self.textView.text = weatherViewModel?.text
             }
         }
     }
