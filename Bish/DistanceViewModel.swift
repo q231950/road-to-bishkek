@@ -65,7 +65,7 @@ struct DistanceViewModel {
     
     private static func attributedUnitString(unit: String, value: Int) -> NSAttributedString {
         let valueString = NSAttributedString(string: "\(value)", attributes: bigTextAttributes())
-        let unitString = NSAttributedString(string: "\(unit)", attributes: smallTextAttributes())
+        let unitString = NSAttributedString(string: "\(unit) ", attributes: smallTextAttributes())
         
         let combinedString = NSMutableAttributedString()
         combinedString.append(valueString)

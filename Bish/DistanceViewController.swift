@@ -78,7 +78,6 @@ extension DistanceViewController: CLLocationManagerDelegate {
         if let location = locations.first {
             let distance = distanceToBishkek(location: location)
             self.viewModel = DistanceViewModel(distance: distance)
-            print(distance)
         }
     }
 }

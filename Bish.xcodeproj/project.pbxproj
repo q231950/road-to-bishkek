@@ -17,6 +17,9 @@
 		3B3A27381ED8C6E00065AF68 /* LaunchScreen.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3B3A272C1ED8C6E00065AF68 /* LaunchScreen.strings */; };
 		3B3A27391ED8C6E00065AF68 /* Main.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3B3A272E1ED8C6E00065AF68 /* Main.strings */; };
 		3B3A273B1ED8C6E00065AF68 /* DistanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3A27321ED8C6E00065AF68 /* DistanceViewController.swift */; };
+		3B6B9D811EDA18F8009E622D /* WeatherProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6B9D801EDA18F8009E622D /* WeatherProvider.swift */; };
+		3B6B9D831EDA1EB8009E622D /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6B9D821EDA1EB8009E622D /* Keys.swift */; };
+		3B6B9D851EDA252C009E622D /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6B9D841EDA252C009E622D /* WeatherViewController.swift */; };
 		3BC4E1B31ED77309001636D1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BC4E1B21ED77309001636D1 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +36,9 @@
 		3B3A27301ED8C6E00065AF68 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3B3A27311ED8C6E00065AF68 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B3A27321ED8C6E00065AF68 /* DistanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistanceViewController.swift; sourceTree = "<group>"; };
+		3B6B9D801EDA18F8009E622D /* WeatherProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherProvider.swift; sourceTree = "<group>"; };
+		3B6B9D821EDA1EB8009E622D /* Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		3B6B9D841EDA252C009E622D /* WeatherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		3BC4E19C1ED772C8001636D1 /* Bish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BC4E1B21ED77309001636D1 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -69,6 +75,8 @@
 		3B3A27231ED8C6E00065AF68 /* Bish */ = {
 			isa = PBXGroup;
 			children = (
+				3B6B9D821EDA1EB8009E622D /* Keys.swift */,
+				3B6B9D7F1EDA18CE009E622D /* Weather */,
 				3B3A27241ED8C6E00065AF68 /* AppDelegate.swift */,
 				3B0D2DD71ED8D30D00ADAA24 /* Credits View Controller */,
 				3B0D2DD61ED8C83900ADAA24 /* Distance View Controller */,
@@ -81,6 +89,15 @@
 				3B3A27311ED8C6E00065AF68 /* Info.plist */,
 			);
 			path = Bish;
+			sourceTree = "<group>";
+		};
+		3B6B9D7F1EDA18CE009E622D /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				3B6B9D801EDA18F8009E622D /* WeatherProvider.swift */,
+				3B6B9D841EDA252C009E622D /* WeatherViewController.swift */,
+			);
+			name = Weather;
 			sourceTree = "<group>";
 		};
 		3BC4E1931ED772C8001636D1 = {
@@ -186,9 +203,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B3A273B1ED8C6E00065AF68 /* DistanceViewController.swift in Sources */,
+				3B6B9D831EDA1EB8009E622D /* Keys.swift in Sources */,
 				3B0D2DDB1ED9D5D200ADAA24 /* DistanceViewModel.swift in Sources */,
 				3B0D2DD91ED8D32900ADAA24 /* CreditsViewController.swift in Sources */,
+				3B6B9D851EDA252C009E622D /* WeatherViewController.swift in Sources */,
 				3B3A27331ED8C6E00065AF68 /* AppDelegate.swift in Sources */,
+				3B6B9D811EDA18F8009E622D /* WeatherProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

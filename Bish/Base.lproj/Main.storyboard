@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--distance-->
+        <!--Distance-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="DistanceViewController" customModule="Bish" customModuleProvider="target" sceneMemberID="viewController">
@@ -22,10 +22,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ebj-7s-R6y">
-                                <rect key="frame" x="21" y="25" width="333" height="22.5"/>
-                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="19"/>
-                                <color key="textColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ebj-7s-R6y">
+                                <rect key="frame" x="21" y="25" width="333" height="23"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Label">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="19" name="Menlo-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -38,7 +45,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Ebj-7s-R6y" secondAttribute="trailing" constant="5" id="jxm-A7-h9O"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="distance" image="distance" id="rHe-le-atb"/>
+                    <tabBarItem key="tabBarItem" title="Distance" image="distance" id="rHe-le-atb"/>
                     <connections>
                         <outlet property="distanceLabel" destination="Ebj-7s-R6y" id="w5Q-2Z-n43"/>
                     </connections>
@@ -47,7 +54,7 @@
             </objects>
             <point key="canvasLocation" x="1095" y="161"/>
         </scene>
-        <!--credits-->
+        <!--Credits-->
         <scene sceneID="JeD-rw-8Nt">
             <objects>
                 <viewController id="cto-Ne-hyd" customClass="CreditsViewController" customModule="Bish" customModuleProvider="target" sceneMemberID="viewController">
@@ -58,13 +65,50 @@
                     <view key="view" contentMode="scaleToFill" id="2c6-7D-m0C">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.3226711929026711" green="0.78141330068465209" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="credits" image="credits" id="FgH-IP-GcS"/>
+                    <tabBarItem key="tabBarItem" title="Credits" image="credits" id="FgH-IP-GcS"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FQK-Xp-fEH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1095" y="867"/>
+            <point key="canvasLocation" x="1094" y="1640"/>
+        </scene>
+        <!--Weather-->
+        <scene sceneID="GFO-0N-ahV">
+            <objects>
+                <viewController id="bkW-Pw-lsC" customClass="WeatherViewController" customModule="Bish" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1du-HB-pD5"/>
+                        <viewControllerLayoutGuide type="bottom" id="Byu-fu-pvf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Qbp-Y6-IFq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pVh-QR-SZv">
+                                <rect key="frame" x="21" y="0.0" width="333" height="618"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="0.9988437295" green="0.1844721735" blue="0.57182186840000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="19"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.77333539799999995" green="1" blue="0.73582518139999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Byu-fu-pvf" firstAttribute="top" secondItem="pVh-QR-SZv" secondAttribute="bottom" id="HbC-bs-wPv"/>
+                            <constraint firstItem="pVh-QR-SZv" firstAttribute="leading" secondItem="Qbp-Y6-IFq" secondAttribute="leadingMargin" constant="5" id="dae-XT-Dw5"/>
+                            <constraint firstItem="pVh-QR-SZv" firstAttribute="top" secondItem="1du-HB-pD5" secondAttribute="bottom" constant="-20" id="gvF-QF-oxI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pVh-QR-SZv" secondAttribute="trailing" constant="5" id="x1Z-57-OdA"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Weather" image="weather" id="yiG-bX-Ga3"/>
+                    <connections>
+                        <outlet property="textView" destination="pVh-QR-SZv" id="fbE-IP-DIZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zhB-ih-LHA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1094" y="825"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="bp4-TE-BC1">
@@ -79,16 +123,18 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="h3s-6M-Ncq"/>
-                        <segue destination="cto-Ne-hyd" kind="relationship" relationship="viewControllers" id="JMx-X6-QFJ"/>
+                        <segue destination="bkW-Pw-lsC" kind="relationship" relationship="viewControllers" id="Rlt-Ws-Nv8"/>
+                        <segue destination="cto-Ne-hyd" kind="relationship" relationship="viewControllers" id="g4Z-Sj-RH9"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fry-wW-atQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="145" y="539"/>
+            <point key="canvasLocation" x="111" y="824"/>
         </scene>
     </scenes>
     <resources>
         <image name="credits" width="30" height="30"/>
-        <image name="distance" width="30" height="30"/>
+        <image name="distance" width="30" height="29"/>
+        <image name="weather" width="30" height="30"/>
     </resources>
 </document>
