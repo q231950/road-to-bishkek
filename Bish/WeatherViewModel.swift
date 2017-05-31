@@ -15,5 +15,4 @@ struct WeatherViewModel {
     init(json: Any) {
         text = "\n\(String(describing: json))"
     }
-    
 }

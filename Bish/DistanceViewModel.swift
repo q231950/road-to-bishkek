@@ -36,11 +36,6 @@ struct DistanceViewModel {
         attributedString = combinedString
     }
     
-    private static let kBigTextFontSize: CGFloat = 60
-    private static let kBigTextFontName: String = "Menlo-Bold"
-    private static let kSmallTextFontSize: CGFloat = 32
-    private static let kSmallTextFontName: String = "Menlo"
-    
     private static func attributedKilometersStringWith(_ distance: CLLocationDistance) -> NSAttributedString {
         return attributedUnitString(unit: "kilometers", value: Int(distance.divided(by: 1000).rounded(.up)))
     }
@@ -53,19 +48,9 @@ struct DistanceViewModel {
         return attributedUnitString(unit: "centimeters", value: Int(distance.multiplied(by: 100).truncatingRemainder(dividingBy: 100)))
     }
     
-    private static func bigTextAttributes() -> [String: Any] {
-        return  [NSFontAttributeName: UIFont.init(name: kBigTextFontName, size: kBigTextFontSize)!,
-                 NSForegroundColorAttributeName: UIColor.white]
-    }
-    
-    private static func smallTextAttributes() -> [String: Any] {
-        return [NSFontAttributeName: UIFont.init(name: kSmallTextFontName, size: kSmallTextFontSize)!,
-                NSForegroundColorAttributeName: UIColor.white]
-    }
-    
     private static func attributedUnitString(unit: String, value: Int) -> NSAttributedString {
-        let valueString = NSAttributedString(string: "\(value)", attributes: bigTextAttributes())
-        let unitString = NSAttributedString(string: "\(unit) ", attributes: smallTextAttributes())
+        let valueString = "\(value)".attributedBigText()
+        let unitString = "\(unit) ".attributedSmallText()
         
         let combinedString = NSMutableAttributedString()
         combinedString.append(valueString)
@@ -74,8 +59,8 @@ struct DistanceViewModel {
     }
     
     private static func attributedCityString(name: String) -> NSAttributedString {
-        let valueString = NSAttributedString(string: "to", attributes: smallTextAttributes())
-        let unitString = NSAttributedString(string: "\(name)", attributes: bigTextAttributes())
+        let valueString = "to".attributedSmallText()
+        let unitString = "\(name)".attributedBigText()
         
         let combinedString = NSMutableAttributedString()
         combinedString.append(valueString)
