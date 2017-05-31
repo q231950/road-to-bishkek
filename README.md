@@ -1,6 +1,6 @@
-# bish [road-to-bishkek]
+# bish
 
-It's always good to know how far you are from Bishkek. And what's the weather like.
+**Always good to know how far you are from Bishkek - and what the weather is like.**
 
 ![image](screenshot.png)
 
