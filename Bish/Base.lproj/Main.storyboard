@@ -93,7 +93,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" red="0.77333539799999995" green="1" blue="0.73582518139999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.21311275424159357" green="0.7113935596446701" blue="0.53192441802258084" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Byu-fu-pvf" firstAttribute="top" secondItem="pVh-QR-SZv" secondAttribute="bottom" id="HbC-bs-wPv"/>
                             <constraint firstItem="pVh-QR-SZv" firstAttribute="leading" secondItem="Qbp-Y6-IFq" secondAttribute="leadingMargin" constant="5" id="dae-XT-Dw5"/>

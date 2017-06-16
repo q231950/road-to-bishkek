@@ -18,7 +18,7 @@ class WeatherViewController: UIViewController {
         let weatherProvider = WeatherProvider()
         weatherProvider.weather(in: "bishkek") { (weatherViewModel: WeatherViewModel?, error: Error?) in
             DispatchQueue.main.async {
-                self.textView.text = weatherViewModel?.text
+                self.textView.attributedText = weatherViewModel?.text
             }
         }
     }
