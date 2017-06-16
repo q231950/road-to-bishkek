@@ -22,9 +22,21 @@
 		3B6B9D851EDA252C009E622D /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6B9D841EDA252C009E622D /* WeatherViewController.swift */; };
 		3B85863E1EDF55E100157DF6 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B85863D1EDF55E100157DF6 /* WeatherViewModel.swift */; };
 		3B8586401EDF582800157DF6 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B85863F1EDF582800157DF6 /* StringExtensions.swift */; };
+		3BBF60321EF3E5FA0066644E /* CityCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF60311EF3E5FA0066644E /* CityCloud.swift */; };
+		3BBF603A1EF3E7810066644E /* CityCloudTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF60391EF3E7810066644E /* CityCloudTests.swift */; };
 		3BC4E1B31ED77309001636D1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BC4E1B21ED77309001636D1 /* CoreLocation.framework */; };
 		3BEB7DC51EF3C2B30081BB97 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BEB7DC41EF3C2B30081BB97 /* CloudKit.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3BBF603C1EF3E7810066644E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3BC4E1941ED772C8001636D1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3BC4E19B1ED772C8001636D1;
+			remoteInfo = Bish;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		3B0D2DD81ED8D32900ADAA24 /* CreditsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
@@ -44,6 +56,10 @@
 		3B6B9D841EDA252C009E622D /* WeatherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		3B85863D1EDF55E100157DF6 /* WeatherViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		3B85863F1EDF582800157DF6 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		3BBF60311EF3E5FA0066644E /* CityCloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCloud.swift; sourceTree = "<group>"; };
+		3BBF60371EF3E7810066644E /* BishTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BishTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BBF60391EF3E7810066644E /* CityCloudTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCloudTests.swift; sourceTree = "<group>"; };
+		3BBF603B1EF3E7810066644E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BC4E19C1ED772C8001636D1 /* Bish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BC4E1B21ED77309001636D1 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		3BEB7DC31EF3C2A60081BB97 /* Bish.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Bish.entitlements; sourceTree = "<group>"; };
@@ -51,6 +67,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3BBF60341EF3E7810066644E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3BC4E1991ED772C8001636D1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -86,6 +109,7 @@
 				3B3A27241ED8C6E00065AF68 /* AppDelegate.swift */,
 				3B6B9D821EDA1EB8009E622D /* Keys.swift */,
 				3B85863F1EDF582800157DF6 /* StringExtensions.swift */,
+				3BBF60301EF3E59A0066644E /* Cloudkit */,
 				3B6B9D7F1EDA18CE009E622D /* Weather */,
 				3B0D2DD71ED8D30D00ADAA24 /* Credits View Controller */,
 				3B0D2DD61ED8C83900ADAA24 /* Distance View Controller */,
@@ -111,10 +135,28 @@
 			name = Weather;
 			sourceTree = "<group>";
 		};
+		3BBF60301EF3E59A0066644E /* Cloudkit */ = {
+			isa = PBXGroup;
+			children = (
+				3BBF60311EF3E5FA0066644E /* CityCloud.swift */,
+			);
+			path = Cloudkit;
+			sourceTree = "<group>";
+		};
+		3BBF60381EF3E7810066644E /* BishTests */ = {
+			isa = PBXGroup;
+			children = (
+				3BBF60391EF3E7810066644E /* CityCloudTests.swift */,
+				3BBF603B1EF3E7810066644E /* Info.plist */,
+			);
+			path = BishTests;
+			sourceTree = "<group>";
+		};
 		3BC4E1931ED772C8001636D1 = {
 			isa = PBXGroup;
 			children = (
 				3B3A27231ED8C6E00065AF68 /* Bish */,
+				3BBF60381EF3E7810066644E /* BishTests */,
 				3BC4E19D1ED772C8001636D1 /* Products */,
 				3BC4E1B11ED77309001636D1 /* Frameworks */,
 			);
@@ -124,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				3BC4E19C1ED772C8001636D1 /* Bish.app */,
+				3BBF60371EF3E7810066644E /* BishTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -140,6 +183,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		3BBF60361EF3E7810066644E /* BishTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3BBF603E1EF3E7810066644E /* Build configuration list for PBXNativeTarget "BishTests" */;
+			buildPhases = (
+				3BBF60331EF3E7810066644E /* Sources */,
+				3BBF60341EF3E7810066644E /* Frameworks */,
+				3BBF60351EF3E7810066644E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3BBF603D1EF3E7810066644E /* PBXTargetDependency */,
+			);
+			name = BishTests;
+			productName = BishTests;
+			productReference = 3BBF60371EF3E7810066644E /* BishTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		3BC4E19B1ED772C8001636D1 /* Bish */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3BC4E1AE1ED772C8001636D1 /* Build configuration list for PBXNativeTarget "Bish" */;
@@ -163,10 +224,15 @@
 		3BC4E1941ED772C8001636D1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0830;
+				LastSwiftUpdateCheck = 0900;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = elbedev.com;
 				TargetAttributes = {
+					3BBF60361EF3E7810066644E = {
+						CreatedOnToolsVersion = 9.0;
+						DevelopmentTeam = X29V4JPQ55;
+						TestTargetID = 3BC4E19B1ED772C8001636D1;
+					};
 					3BC4E19B1ED772C8001636D1 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = X29V4JPQ55;
@@ -197,11 +263,19 @@
 			projectRoot = "";
 			targets = (
 				3BC4E19B1ED772C8001636D1 /* Bish */,
+				3BBF60361EF3E7810066644E /* BishTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3BBF60351EF3E7810066644E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3BC4E19A1ED772C8001636D1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -218,12 +292,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3BBF60331EF3E7810066644E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BBF603A1EF3E7810066644E /* CityCloudTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3BC4E1981ED772C8001636D1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				3B3A273B1ED8C6E00065AF68 /* DistanceViewController.swift in Sources */,
 				3B6B9D831EDA1EB8009E622D /* Keys.swift in Sources */,
+				3BBF60321EF3E5FA0066644E /* CityCloud.swift in Sources */,
 				3B0D2DDB1ED9D5D200ADAA24 /* DistanceViewModel.swift in Sources */,
 				3B8586401EDF582800157DF6 /* StringExtensions.swift in Sources */,
 				3B0D2DD91ED8D32900ADAA24 /* CreditsViewController.swift in Sources */,
@@ -235,6 +318,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3BBF603D1EF3E7810066644E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3BC4E19B1ED772C8001636D1 /* Bish */;
+			targetProxy = 3BBF603C1EF3E7810066644E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		3B3A27261ED8C6E00065AF68 /* LaunchScreen.storyboard */ = {
@@ -281,6 +372,54 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		3BBF603F1EF3E7810066644E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = X29V4JPQ55;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = BishTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.elbedev.BishTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bish.app/Bish";
+			};
+			name = Debug;
+		};
+		3BBF60401EF3E7810066644E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = X29V4JPQ55;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = BishTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.elbedev.BishTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bish.app/Bish";
+			};
+			name = Release;
+		};
 		3BC4E1AC1ED772C8001636D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -409,6 +548,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3BBF603E1EF3E7810066644E /* Build configuration list for PBXNativeTarget "BishTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BBF603F1EF3E7810066644E /* Debug */,
+				3BBF60401EF3E7810066644E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		3BC4E1971ED772C8001636D1 /* Build configuration list for PBXProject "Bish" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
