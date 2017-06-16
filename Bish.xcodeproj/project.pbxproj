@@ -83,12 +83,13 @@
 		3B3A27231ED8C6E00065AF68 /* Bish */ = {
 			isa = PBXGroup;
 			children = (
-				3BEB7DC31EF3C2A60081BB97 /* Bish.entitlements */,
-				3B6B9D821EDA1EB8009E622D /* Keys.swift */,
-				3B6B9D7F1EDA18CE009E622D /* Weather */,
 				3B3A27241ED8C6E00065AF68 /* AppDelegate.swift */,
+				3B6B9D821EDA1EB8009E622D /* Keys.swift */,
+				3B85863F1EDF582800157DF6 /* StringExtensions.swift */,
+				3B6B9D7F1EDA18CE009E622D /* Weather */,
 				3B0D2DD71ED8D30D00ADAA24 /* Credits View Controller */,
 				3B0D2DD61ED8C83900ADAA24 /* Distance View Controller */,
+				3BEB7DC31EF3C2A60081BB97 /* Bish.entitlements */,
 				3B3A27251ED8C6E00065AF68 /* Assets.xcassets */,
 				3B3A27261ED8C6E00065AF68 /* LaunchScreen.storyboard */,
 				3B3A27281ED8C6E00065AF68 /* Main.storyboard */,
@@ -96,7 +97,6 @@
 				3B3A272C1ED8C6E00065AF68 /* LaunchScreen.strings */,
 				3B3A272E1ED8C6E00065AF68 /* Main.strings */,
 				3B3A27311ED8C6E00065AF68 /* Info.plist */,
-				3B85863F1EDF582800157DF6 /* StringExtensions.swift */,
 			);
 			path = Bish;
 			sourceTree = "<group>";
