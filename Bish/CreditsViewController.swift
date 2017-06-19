@@ -14,4 +14,24 @@ class CreditsViewController: UIViewController {
         return .default
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        title = "Credits"
+        
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let cloud = CityCloud()
+        do {
+            try cloud.cityWithName(name: "kala") { (names) in
+                
+        }
+        } catch _ {
+            
+        }
+    }
+    
 }

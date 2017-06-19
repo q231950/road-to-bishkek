@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CloudKit
 
 public class CityCloud {
     
@@ -14,7 +15,16 @@ public class CityCloud {
         
     }
     
-    public func cities(_ completion: (([String]) -> Void)) throws {
-        completion(["hamburg", "bishkek"])
+    public func cityWithName(name: String, completion: (([String]) -> Void)) throws {
+        let predicate = NSPredicate(format: "name == 'aqa mohammad khan'", argumentArray:[String]())
+        let query = CKQuery(recordType: "city", predicate: predicate)
+        let database = CKContainer.default().publicCloudDatabase
+        database.perform(query, inZoneWith: nil) { (record: [CKRecord]?, error: Error?) in
+            print(record as Any)
+        }
+    }
+    
+    func fetchCities() {
+        
     }
 }

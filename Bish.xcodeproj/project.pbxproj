@@ -524,6 +524,7 @@
 				CODE_SIGN_ENTITLEMENTS = Bish/Bish.entitlements;
 				DEVELOPMENT_TEAM = X29V4JPQ55;
 				INFOPLIST_FILE = "$(SRCROOT)/Bish/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.elbedev.bish;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -538,6 +539,7 @@
 				CODE_SIGN_ENTITLEMENTS = Bish/Bish.entitlements;
 				DEVELOPMENT_TEAM = X29V4JPQ55;
 				INFOPLIST_FILE = "$(SRCROOT)/Bish/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.elbedev.bish;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -555,6 +557,7 @@
 				3BBF60401EF3E7810066644E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3BC4E1971ED772C8001636D1 /* Build configuration list for PBXProject "Bish" */ = {
 			isa = XCConfigurationList;
