@@ -26,6 +26,7 @@
 		3BBF603A1EF3E7810066644E /* CityCloudTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF60391EF3E7810066644E /* CityCloudTests.swift */; };
 		3BC4E1B31ED77309001636D1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BC4E1B21ED77309001636D1 /* CoreLocation.framework */; };
 		3BEB7DC51EF3C2B30081BB97 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BEB7DC41EF3C2B30081BB97 /* CloudKit.framework */; };
+		3BFAC1081EF78D8800EC7FA7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFAC1071EF78D8800EC7FA7 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		3BC4E1B21ED77309001636D1 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		3BEB7DC31EF3C2A60081BB97 /* Bish.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Bish.entitlements; sourceTree = "<group>"; };
 		3BEB7DC41EF3C2B30081BB97 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		3BFAC1071EF78D8800EC7FA7 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,12 +97,20 @@
 			name = "Distance View Controller";
 			sourceTree = "<group>";
 		};
-		3B0D2DD71ED8D30D00ADAA24 /* Credits View Controller */ = {
+		3B0D2DD71ED8D30D00ADAA24 /* Credits */ = {
 			isa = PBXGroup;
 			children = (
 				3B0D2DD81ED8D32900ADAA24 /* CreditsViewController.swift */,
 			);
-			name = "Credits View Controller";
+			name = Credits;
+			sourceTree = "<group>";
+		};
+		3B1D887E1EFB89D800FFC644 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				3BFAC1071EF78D8800EC7FA7 /* SettingsViewController.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		3B3A27231ED8C6E00065AF68 /* Bish */ = {
@@ -109,9 +119,10 @@
 				3B3A27241ED8C6E00065AF68 /* AppDelegate.swift */,
 				3B6B9D821EDA1EB8009E622D /* Keys.swift */,
 				3B85863F1EDF582800157DF6 /* StringExtensions.swift */,
-				3BBF60301EF3E59A0066644E /* Cloudkit */,
 				3B6B9D7F1EDA18CE009E622D /* Weather */,
-				3B0D2DD71ED8D30D00ADAA24 /* Credits View Controller */,
+				3B0D2DD71ED8D30D00ADAA24 /* Credits */,
+				3BBF60301EF3E59A0066644E /* Cities */,
+				3B1D887E1EFB89D800FFC644 /* Settings */,
 				3B0D2DD61ED8C83900ADAA24 /* Distance View Controller */,
 				3BEB7DC31EF3C2A60081BB97 /* Bish.entitlements */,
 				3B3A27251ED8C6E00065AF68 /* Assets.xcassets */,
@@ -135,12 +146,12 @@
 			name = Weather;
 			sourceTree = "<group>";
 		};
-		3BBF60301EF3E59A0066644E /* Cloudkit */ = {
+		3BBF60301EF3E59A0066644E /* Cities */ = {
 			isa = PBXGroup;
 			children = (
 				3BBF60311EF3E5FA0066644E /* CityCloud.swift */,
 			);
-			path = Cloudkit;
+			path = Cities;
 			sourceTree = "<group>";
 		};
 		3BBF60381EF3E7810066644E /* BishTests */ = {
@@ -304,6 +315,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BFAC1081EF78D8800EC7FA7 /* SettingsViewController.swift in Sources */,
 				3B3A273B1ED8C6E00065AF68 /* DistanceViewController.swift in Sources */,
 				3B6B9D831EDA1EB8009E622D /* Keys.swift in Sources */,
 				3BBF60321EF3E5FA0066644E /* CityCloud.swift in Sources */,
@@ -524,7 +536,7 @@
 				CODE_SIGN_ENTITLEMENTS = Bish/Bish.entitlements;
 				DEVELOPMENT_TEAM = X29V4JPQ55;
 				INFOPLIST_FILE = "$(SRCROOT)/Bish/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.elbedev.bish;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -539,7 +551,7 @@
 				CODE_SIGN_ENTITLEMENTS = Bish/Bish.entitlements;
 				DEVELOPMENT_TEAM = X29V4JPQ55;
 				INFOPLIST_FILE = "$(SRCROOT)/Bish/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.elbedev.bish;
 				PRODUCT_NAME = "$(TARGET_NAME)";

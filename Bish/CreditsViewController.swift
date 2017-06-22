@@ -18,18 +18,18 @@ class CreditsViewController: UIViewController {
         super.viewDidLoad()
         title = "Credits"
         
-        navigationController?.navigationBar.prefersLargeTitles = true
+        if #available(iOS 11.0, *) {
+            navigationController?.navigationBar.prefersLargeTitles = true
+        } else {
+            // Fallback on earlier versions
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         let cloud = CityCloud()
-        do {
-            try cloud.cityWithName(name: "kala") { (names) in
-                
-        }
-        } catch _ {
+        cloud.cityWithName(name: "aqa mohammad khan") { (names, error) in
             
         }
     }
