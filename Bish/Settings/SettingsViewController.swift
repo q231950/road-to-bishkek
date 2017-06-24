@@ -9,6 +9,7 @@
 import UIKit
 
 class SettingsViewController: UITableViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,7 +39,18 @@ extension SettingsViewController {
 
 // MARK: UITableViewDelegate
 extension SettingsViewController {
+    enum Row: Int {
+        case citySelectionRow = 0, creditsRow
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "showCredits", sender: nil)
+//        switch Row(rawValue: indexPath.row) {
+//        case Row.citySelectionRow:
+            performSegue(withIdentifier: "showCitySelection", sender: nil)
+//        case Row.creditsRow:
+//            performSegue(withIdentifier: "showCredits", sender: nil)
+//        default:
+//            print("not implemented")
+//        }
     }
 }
