@@ -46,9 +46,9 @@ extension SettingsViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        switch Row(rawValue: indexPath.row) {
 //        case Row.citySelectionRow:
-            performSegue(withIdentifier: "showCitySelection", sender: nil)
+//            performSegue(withIdentifier: "showCitySelection", sender: nil)
 //        case Row.creditsRow:
-//            performSegue(withIdentifier: "showCredits", sender: nil)
+            performSegue(withIdentifier: "showCredits", sender: nil)
 //        default:
 //            print("not implemented")
 //        }

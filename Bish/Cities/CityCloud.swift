@@ -26,6 +26,9 @@ public class CityCloud {
             let query = CKQuery(recordType: "city", predicate: predicate)
             let database = CKContainer.default().publicCloudDatabase
             database.perform(query, inZoneWith: nil) { (record: [CKRecord]?, error: Error?) in
+                if let error = error {
+                    print(error)
+                }
                 print(record as Any)
             }
         }
