@@ -30,14 +30,14 @@ struct DistanceViewModel {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .left
         
-        let attributes = [NSParagraphStyleAttributeName: paragraphStyle]
+        let attributes = [NSAttributedStringKey.paragraphStyle: paragraphStyle]
         combinedString.addAttributes(attributes, range: NSMakeRange(0, combinedString.length))
         
         attributedString = combinedString
     }
     
     private static func attributedKilometersStringWith(_ distance: CLLocationDistance) -> NSAttributedString {
-        return attributedUnitString(unit: "kilometers", value: Int(distance.divided(by: 1000).rounded(.up)))
+        return attributedUnitString(unit: "kilometers", value: Int((distance / 1000).rounded(.up)))
     }
     
     private static func attributedMetersStringWith(_ distance: CLLocationDistance) -> NSAttributedString {
@@ -45,7 +45,7 @@ struct DistanceViewModel {
     }
     
     private static func attributedCentimetersStringWith(_ distance: CLLocationDistance) -> NSAttributedString {
-        return attributedUnitString(unit: "centimeters", value: Int(distance.multiplied(by: 100).truncatingRemainder(dividingBy: 100)))
+        return attributedUnitString(unit: "centimeters", value: Int((distance * 100).truncatingRemainder(dividingBy: 100)))
     }
     
     private static func attributedUnitString(unit: String, value: Int) -> NSAttributedString {

@@ -28,13 +28,13 @@ extension String {
         return NSAttributedString(string: self, attributes: smallTextAttributes())
     }
     
-    private func bigTextAttributes() -> [String: Any] {
-        return  [NSFontAttributeName: UIFont.init(name: FontName.bold.rawValue, size: FontSize.big.rawValue)!,
-                 NSForegroundColorAttributeName: UIColor.white]
+    private func bigTextAttributes() -> [NSAttributedStringKey: Any] {
+        return  [NSAttributedStringKey.font: UIFont.init(name: FontName.bold.rawValue, size: FontSize.big.rawValue)!,
+                 NSAttributedStringKey.foregroundColor: UIColor.white]
     }
     
-    private func smallTextAttributes() -> [String: Any] {
-        return [NSFontAttributeName: UIFont.init(name: FontName.regular.rawValue, size: FontSize.small.rawValue)!,
-                NSForegroundColorAttributeName: UIColor.white]
+    private func smallTextAttributes() -> [NSAttributedStringKey: Any] {
+        return [NSAttributedStringKey.font: UIFont.init(name: FontName.regular.rawValue, size: FontSize.small.rawValue)!,
+                NSAttributedStringKey.foregroundColor: UIColor.white]
     }
 }
