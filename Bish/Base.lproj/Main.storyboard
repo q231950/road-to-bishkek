@@ -43,9 +43,9 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Ebj-7s-R6y" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="5" id="0TP-HB-7wh"/>
+                            <constraint firstItem="Ebj-7s-R6y" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="25" id="0TP-HB-7wh"/>
                             <constraint firstItem="Ebj-7s-R6y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="5" id="GtV-jR-ReG"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Ebj-7s-R6y" secondAttribute="bottom" constant="5" id="g73-xn-SLJ"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Ebj-7s-R6y" secondAttribute="bottom" constant="5" id="g73-xn-SLJ"/>
                             <constraint firstItem="Ebj-7s-R6y" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gGv-dd-mEV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ebj-7s-R6y" secondAttribute="trailing" constant="5" id="jxm-A7-h9O"/>
                         </constraints>
@@ -117,7 +117,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ZrF-h2-tkT">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cityCell" id="ZrF-h2-tkT">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZrF-h2-tkT" id="uf9-p1-xCw">
@@ -196,9 +196,9 @@
                         </subviews>
                         <color key="backgroundColor" red="0.21311275424159357" green="0.7113935596446701" blue="0.53192441802258084" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Byu-fu-pvf" firstAttribute="top" secondItem="pVh-QR-SZv" secondAttribute="bottom" id="HbC-bs-wPv"/>
+                            <constraint firstAttribute="bottom" secondItem="pVh-QR-SZv" secondAttribute="bottom" constant="49" id="HbC-bs-wPv"/>
                             <constraint firstItem="pVh-QR-SZv" firstAttribute="leading" secondItem="Qbp-Y6-IFq" secondAttribute="leadingMargin" constant="5" id="dae-XT-Dw5"/>
-                            <constraint firstItem="pVh-QR-SZv" firstAttribute="top" secondItem="1du-HB-pD5" secondAttribute="bottom" constant="-20" id="gvF-QF-oxI"/>
+                            <constraint firstItem="pVh-QR-SZv" firstAttribute="top" secondItem="Qbp-Y6-IFq" secondAttribute="top" id="gvF-QF-oxI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="pVh-QR-SZv" secondAttribute="trailing" constant="5" id="x1Z-57-OdA"/>
                         </constraints>
                     </view>

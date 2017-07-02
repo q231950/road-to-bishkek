@@ -13,13 +13,11 @@ class CitySelectionViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if #available(iOS 11.0, *) {
-            navigationController?.navigationBar.prefersLargeTitles = true
-        } else {
-            // Fallback on earlier versions
-        }
-        
+        navigationController?.navigationBar.prefersLargeTitles = true
         title = "City Selection"
+        
+        let searchViewController = UIViewController()
+        navigationItem.searchController = UISearchController(searchResultsController: searchViewController)
     }
     
     override func viewDidAppear(_ animated: Bool) {
