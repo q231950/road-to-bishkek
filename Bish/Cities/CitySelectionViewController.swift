@@ -10,14 +10,17 @@ import UIKit
 
 class CitySelectionViewController: UITableViewController {
     
+    private var filteredCities = [City]()
+    private let searchResultsViewController = UIViewController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationController?.navigationBar.prefersLargeTitles = true
         title = "City Selection"
         
-        let searchViewController = UIViewController()
-        navigationItem.searchController = UISearchController(searchResultsController: searchViewController)
+        navigationItem.searchController = UISearchController(searchResultsController: searchResultsViewController)
+        navigationItem.searchController?.searchResultsUpdater = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -27,5 +30,11 @@ class CitySelectionViewController: UITableViewController {
         cloud.cityWithName(name: "San") { (names, error) in
             
         }
+    }
+}
+
+extension CitySelectionViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        
     }
 }
