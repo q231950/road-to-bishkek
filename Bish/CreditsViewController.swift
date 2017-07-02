@@ -24,14 +24,4 @@ class CreditsViewController: UIViewController {
             // Fallback on earlier versions
         }
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        let cloud = CityCloud()
-        cloud.cityWithName(name: "aqa mohammad khan") { (names, error) in
-            
-        }
-    }
-    
 }

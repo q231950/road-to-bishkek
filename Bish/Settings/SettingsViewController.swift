@@ -33,7 +33,17 @@ extension SettingsViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return tableView.dequeueReusableCell(withIdentifier: "SettingsCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsCell", for: indexPath)
+        switch Row(rawValue: indexPath.row)!.rawValue {
+        case Row.citySelectionRow.rawValue:
+            cell.textLabel?.text = "City Selection"
+        case Row.creditsRow.rawValue:
+            cell.textLabel?.text = "Credits"
+        default:
+            print("not implemented")
+        }
+        
+        return cell
     }
 }
 
@@ -44,13 +54,13 @@ extension SettingsViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        switch Row(rawValue: indexPath.row) {
-//        case Row.citySelectionRow:
-//            performSegue(withIdentifier: "showCitySelection", sender: nil)
-//        case Row.creditsRow:
+        switch Row(rawValue: indexPath.row)!.rawValue {
+        case Row.citySelectionRow.rawValue:
+            performSegue(withIdentifier: "showCitySelection", sender: nil)
+        case Row.creditsRow.rawValue:
             performSegue(withIdentifier: "showCredits", sender: nil)
-//        default:
-//            print("not implemented")
-//        }
+        default:
+            print("not implemented")
+        }
     }
 }

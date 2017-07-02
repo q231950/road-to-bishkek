@@ -22,8 +22,8 @@ public class CityCloud {
                 return
             }
             
-            let predicate = NSPredicate(format: "name CONTAINS[dc] '\(name)'")
-            let query = CKQuery(recordType: "city", predicate: predicate)
+            let predicate = NSPredicate(format: "name BEGINSWITH '\(name)'")
+            let query = CKQuery(recordType: "Cities", predicate: predicate)
             let database = CKContainer.default().publicCloudDatabase
             database.perform(query, inZoneWith: nil) { (record: [CKRecord]?, error: Error?) in
                 if let error = error {
