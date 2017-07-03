@@ -10,19 +10,15 @@ import Foundation
 import CloudKit
 
 public class CityCloud {
-    
-    public init() {
-        
-    }
-    
-    public func cityWithName(name: String, completion: @escaping (([String]?, Error?) -> Void)) {
+
+    public func cityNamed(_ name: String, completion: @escaping (([String]?, Error?) -> Void)) {
         CKContainer.default().accountStatus { (accountStatus, error) in
             guard error == nil else {
                 completion(nil, error)
                 return
             }
             
-            let predicate = NSPredicate(format: "name BEGINSWITH '\(name)'")
+            let predicate = NSPredicate(format: "self CONTAINS '\(name)'")
             let query = CKQuery(recordType: "Cities", predicate: predicate)
             let database = CKContainer.default().publicCloudDatabase
             database.perform(query, inZoneWith: nil) { (records: [CKRecord]?, error: Error?) in
