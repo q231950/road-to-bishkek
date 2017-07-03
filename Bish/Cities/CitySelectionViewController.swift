@@ -49,7 +49,7 @@ class CitySelectionViewController: UITableViewController {
     }
 
     private func setupTimer() {
-        updateTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { [weak self] (_) in
+        updateTimer = Timer.scheduledTimer(withTimeInterval: 2, repeats: true, block: { [weak self] (_) in
             self?.updateResults()
         })
     }
