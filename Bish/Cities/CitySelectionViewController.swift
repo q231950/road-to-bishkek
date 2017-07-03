@@ -9,7 +9,8 @@
 import UIKit
 
 class CitySelectionViewController: UITableViewController {
-    
+
+    public var selectedCity: City?
     private var filteredCities = [City]()
     private let cloud = CityCloud()
     private var searchTermChanged = false
@@ -73,11 +74,7 @@ extension CitySelectionViewController: UISearchResultsUpdating {
 
         searchTermChanged = false
 
-        cloud.cityNamed(name) { (names, error) in
-            let cities = names?.map({ (name: String) -> City in
-                return City(name: name)
-            })
-
+        cloud.citiesNamed(name) { (cities, error) in
             if let cities = cities {
                 self.filteredCities = cities
             } else {
@@ -95,13 +92,25 @@ extension CitySelectionViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cityCell", for: indexPath)
-        
-        cell.textLabel?.text = filteredCities[indexPath.row].name
-        
+
+        let city = filteredCities[indexPath.row]
+            cell.textLabel?.text = city.name
+
+        if let selectedCity = selectedCity {
+            cell.accessoryType = selectedCity == city ? .checkmark : .none
+        }
+
         return cell
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return filteredCities.count
+    }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedCity = filteredCities[indexPath.row]
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
 }

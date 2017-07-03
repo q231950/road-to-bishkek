@@ -12,7 +12,7 @@ import CoreLocation
 struct DistanceViewModel {
     public let attributedString: NSAttributedString
     
-    init(distance: CLLocationDistance) {
+    init(city: City, distance: CLLocationDistance) {
         let combinedString = NSMutableAttributedString()
         
         let kilometers = DistanceViewModel.attributedKilometersStringWith(distance)
@@ -24,8 +24,8 @@ struct DistanceViewModel {
         let centimeters = DistanceViewModel.attributedCentimetersStringWith(distance)
         combinedString.append(centimeters)
         
-        let city = DistanceViewModel.attributedCityString(name: "Bishkek")
-        combinedString.append(city)
+        let cityName = DistanceViewModel.attributedCityString(name: city.name)
+        combinedString.append(cityName)
         
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .left

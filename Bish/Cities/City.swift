@@ -7,7 +7,15 @@
 //
 
 import Foundation
+import CoreLocation
 
-struct City {
+public struct City {
     let name: String
+    let location: CLLocation
+
+    static func == (left: City, right: City) -> Bool {
+        let sameName = left.name == right.name
+        let sameLocation = left.location == right.location
+        return sameName && sameLocation
+    }
 }

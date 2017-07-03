@@ -12,7 +12,8 @@ import CoreLocation
 class DistanceViewController: UIViewController {
     
     @IBOutlet weak var distanceLabel: UILabel!
-    
+
+    public var city: City?
     private let manager = CLLocationManager()
     fileprivate var viewModel: DistanceViewModel? {
         didSet {
@@ -27,6 +28,15 @@ class DistanceViewController: UIViewController {
         manager.desiredAccuracy = 1
         
         handleCurrentLocationAuthorizationStatus(CLLocationManager.authorizationStatus())
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        guard city != nil else {
+            showNeedsCitySelection()
+            return
+        }
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -44,16 +54,6 @@ class DistanceViewController: UIViewController {
         if CLLocationManager.locationServicesEnabled() {
             manager.startUpdatingLocation()
         }
-    }
-    
-    fileprivate func distanceToBishkek(location: CLLocation) -> CLLocationDistance {
-        
-        let bishkekCoordinates = CLLocationCoordinate2D(latitude: CLLocationDegrees(42.874722),
-                                                        longitude: CLLocationDegrees(74.612222))
-        let bishkek = CLLocation(coordinate: bishkekCoordinates, altitude: 800, horizontalAccuracy: 1, verticalAccuracy: 1, timestamp: Date())
-        
-        //print("\(location.altitude) - \(bishkek.altitude)")
-        return location.distance(from: bishkek)
     }
 }
 
@@ -75,10 +75,25 @@ extension DistanceViewController: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.first {
-            let distance = distanceToBishkek(location: location)
-            self.viewModel = DistanceViewModel(distance: distance)
+        guard let location = locations.first, let city = city else {
+            return
         }
+
+        let distance = location.distance(from: city.location)
+        self.viewModel = DistanceViewModel(city: city, distance: distance)
+    }
+
+    private func showNeedsCitySelection() {
+        let alertTitle = NSLocalizedString("No city selected", comment: "The title of the city selection required alert")
+        let alertMessage = NSLocalizedString("Please select a city in the settings section", comment: "The message of the city selection required alert")
+        let alertController = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
+        let actionTitle = NSLocalizedString("Ok", comment: "The button title to dismiss the city selection required alert")
+        let okAction = UIAlertAction(title: actionTitle, style: .default) { (_) in
+            alertController.dismiss(animated: true, completion: nil)
+        }
+        alertController.addAction(okAction)
+
+        present(alertController, animated: true, completion: nil)
     }
 }
 

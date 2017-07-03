@@ -11,7 +11,7 @@ import CloudKit
 
 public class CityCloud {
 
-    public func cityNamed(_ name: String, completion: @escaping (([String]?, Error?) -> Void)) {
+    public func citiesNamed(_ name: String, completion: @escaping (([City]?, Error?) -> Void)) {
         CKContainer.default().accountStatus { (accountStatus, error) in
             guard error == nil else {
                 completion(nil, error)
@@ -26,10 +26,23 @@ public class CityCloud {
                     print(error)
                 }
                 
-                let names = records?.map({ (e: CKRecord) -> String in
-                    return e.object(forKey: "name") as! String // TODO
+                let cities = records?.map({ (record: CKRecord) -> City in
+                    let name: String
+                    if let n = record.object(forKey: "name") as? String {
+                        name = n
+                    } else {
+                        name = NSLocalizedString("n/a", comment: "The name of a city when the name is not available")
+                    }
+
+                    let location: CLLocation
+                    if let l = record.object(forKey: "location") as? CLLocation {
+                        location = l
+                    } else {
+                        location = CLLocation()
+                    }
+                    return City(name: name, location: location)
                 })
-                completion(names, nil)
+                completion(cities, nil)
             }
         }
     }
