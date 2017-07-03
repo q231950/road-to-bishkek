@@ -25,11 +25,15 @@ public class CityCloud {
             let predicate = NSPredicate(format: "name BEGINSWITH '\(name)'")
             let query = CKQuery(recordType: "Cities", predicate: predicate)
             let database = CKContainer.default().publicCloudDatabase
-            database.perform(query, inZoneWith: nil) { (record: [CKRecord]?, error: Error?) in
+            database.perform(query, inZoneWith: nil) { (records: [CKRecord]?, error: Error?) in
                 if let error = error {
                     print(error)
                 }
-                print(record as Any)
+                
+                let names = records?.map({ (e: CKRecord) -> String in
+                    return e.object(forKey: "name") as! String // TODO
+                })
+                completion(names, nil)
             }
         }
     }
