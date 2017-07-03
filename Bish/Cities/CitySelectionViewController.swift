@@ -12,6 +12,9 @@ class CitySelectionViewController: UITableViewController {
     
     private var filteredCities = [City]()
     private let cloud = CityCloud()
+    private var searchTermChanged = false
+    private var searchTerm: String?
+    private var updateTimer: Timer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,17 +32,48 @@ class CitySelectionViewController: UITableViewController {
         navigationItem.searchController = UISearchController(searchResultsController: nil)
         navigationItem.searchController?.searchResultsUpdater = self
         navigationItem.searchController?.dimsBackgroundDuringPresentation = false
+        navigationItem.hidesSearchBarWhenScrolling = false
         definesPresentationContext = true
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        setupTimer()
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        updateTimer.invalidate()
+    }
+
+    private func setupTimer() {
+        updateTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { [weak self] (_) in
+            self?.updateResults()
+        })
     }
 }
 
 extension CitySelectionViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        guard let name = searchController.searchBar.text else {
+        guard let name = searchController.searchBar.text, name.count > 0 else {
             return
         }
 
-        cloud.cityWithName(name: name) { (names, error) in
+        searchTerm = name
+        searchTermChanged = true
+    }
+
+    private func updateResults() {
+
+        guard let name = searchTerm, searchTermChanged == true else {
+            return
+        }
+
+        searchTermChanged = false
+
+        cloud.cityNamed(name) { (names, error) in
             let cities = names?.map({ (name: String) -> City in
                 return City(name: name)
             })

@@ -25,7 +25,7 @@ class CityCloudTests: XCTestCase {
     
     func testCityCloudHasCities() {
         let expectation = self.expectation(description: "fetch complete")
-        cityCloudUnderTest.cityWithName(name: "Hamburg", completion: { (cities: [String]?, error: Error?) in
+        cityCloudUnderTest.cityNamed(name: "Hamburg", completion: { (cities: [String]?, error: Error?) in
             XCTAssert(cities?.count != 0, "there should be cities")
             expectation.fulfill()
         })
