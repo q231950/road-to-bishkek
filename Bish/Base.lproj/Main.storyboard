@@ -128,11 +128,11 @@
             </objects>
             <point key="canvasLocation" x="2750" y="1357"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="Wxc-t7-Cuj">
             <objects>
                 <navigationController id="Mib-ld-M9S" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Gkq-Cr-IEy"/>
+                    <tabBarItem key="tabBarItem" systemItem="more" id="Gkq-Cr-IEy"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="f83-a9-T1S">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
