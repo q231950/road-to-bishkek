@@ -10,12 +10,14 @@ import Foundation
 import CoreLocation
 
 public struct City {
+    let identifier: String
     let name: String
     let location: CLLocation
 
     static func == (left: City, right: City) -> Bool {
+        let sameIdentifier = left.identifier == right.identifier
         let sameName = left.name == right.name
         let sameLocation = left.location == right.location
-        return sameName && sameLocation
+        return sameIdentifier && sameName && sameLocation
     }
 }

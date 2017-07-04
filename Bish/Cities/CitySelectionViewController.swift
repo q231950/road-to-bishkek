@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class CitySelectionViewController: UITableViewController {
 
@@ -108,9 +109,60 @@ extension CitySelectionViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedCity = filteredCities[indexPath.row]
+        let city = filteredCities[indexPath.row]
+            selectedCity = city
+
+            do {
+                try deselectAllCities()
+                let cityManagedObject = try managed(city)
+                cityManagedObject.selected = !cityManagedObject.selected
+                try DataStore.shared.persistentContainer.viewContext.save()
+            } catch {
+        }
+
+        
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
+    }
+
+    private func deselectAllCities() throws {
+        if let name = CityManagedObject.entity().name {
+            let request = NSFetchRequest<CityManagedObject>(entityName: name)
+            let storeResult = try DataStore.shared.persistentContainer.viewContext.fetch(request)
+            storeResult.forEach({ (cityManagedObject) in
+                cityManagedObject.selected = false
+            })
+        }
+    }
+
+    private func managed(_ city: City) throws -> CityManagedObject {
+        if let cityManagedObject = try cityManagedObjectWithGeoNameIdentifier(city.identifier) {
+            return cityManagedObject
+        } else {
+            return try createCity(city)
+        }
+    }
+
+    private func createCity(_ city: City) throws -> CityManagedObject {
+        let managedObjectContext = DataStore.shared.persistentContainer.viewContext
+        let cityManagedObject = NSManagedObject(entity: CityManagedObject.entity(), insertInto: managedObjectContext) as! CityManagedObject
+        cityManagedObject.name = city.name
+        cityManagedObject.geonameid = city.identifier
+        cityManagedObject.latitude = city.location.coordinate.latitude
+        cityManagedObject.longitude = city.location.coordinate.longitude
+        try managedObjectContext.save()
+        return cityManagedObject
+    }
+
+    private func cityManagedObjectWithGeoNameIdentifier(_ identifier: String) throws -> CityManagedObject? {
+        if let name = CityManagedObject.entity().name {
+            let request = NSFetchRequest<CityManagedObject>(entityName: name)
+            request.predicate = NSPredicate(format: "geonameid == '\(identifier)'")
+            let storeResult = try DataStore.shared.persistentContainer.viewContext.fetch(request)
+            return storeResult.first
+        }
+
+        return nil
     }
 }

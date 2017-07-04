@@ -40,7 +40,15 @@ public class CityCloud {
                     } else {
                         location = CLLocation()
                     }
-                    return City(name: name, location: location)
+
+                    let identifier: String
+                    if let i = record.object(forKey: "geonameid") as? String {
+                        identifier = i
+                    } else {
+                        identifier = NSLocalizedString("n/a", comment: "The identifier of a city when the name is not available")
+                    }
+
+                    return City(identifier:identifier, name: name, location: location)
                 })
                 completion(cities, nil)
             }
