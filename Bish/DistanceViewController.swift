@@ -71,7 +71,7 @@ class DistanceViewController: UIViewController, NSFetchedResultsControllerDelega
 
         // Edit the sort key as appropriate.
         let sortDescriptor = NSSortDescriptor(key: "name", ascending: false)
-
+        fetchRequest.predicate = NSPredicate(format: "selected == true")
         fetchRequest.sortDescriptors = [sortDescriptor]
 
         // Edit the section name key path and cache name if appropriate.
@@ -103,9 +103,7 @@ class DistanceViewController: UIViewController, NSFetchedResultsControllerDelega
     }
 
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        city = fetchedResultsController.fetchedObjects?.filter({ (city) -> Bool in
-            return city.selected == true
-        }).first
+        city = fetchedResultsController.fetchedObjects?.first
 
         guard let location = manager.location, let city = city else {
             return
@@ -150,20 +148,8 @@ extension DistanceViewController: CLLocationManagerDelegate {
     }
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        showErrorWhileRetrievingLocation()
-    }
-
-    private func showErrorWhileRetrievingLocation() {
-        let alertTitle = NSLocalizedString("Error", comment: "The title of the alert when the location could not be retrieved")
-        let alertMessage = NSLocalizedString("Unable to retrieve location", comment: "The message the alert when the location could not be retrieved")
-        let alertController = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
-        let actionTitle = NSLocalizedString("Ok", comment: "The button title to dismiss the alert when the location could not be retrieved")
-        let okAction = UIAlertAction(title: actionTitle, style: .default) { (_) in
-            alertController.dismiss(animated: true, completion: nil)
-        }
-        alertController.addAction(okAction)
-
-        present(alertController, animated: true, completion: nil)
+        // do nothing. this happens from time to time on the device but it's ok as following attempts will succeed at some point
+        print(error)
     }
 
     private func showNeedsCitySelection() {

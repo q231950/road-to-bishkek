@@ -17,7 +17,6 @@ class WeatherProvider {
                 if let data = data {
                     do {
                         let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
-                        //                    let s = String.init(data: data, encoding: .utf8) {
                         let viewModel = WeatherViewModel(json:json)
                         completion(viewModel, nil)
                     } catch let error {

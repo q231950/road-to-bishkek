@@ -120,7 +120,6 @@ extension CitySelectionViewController {
             } catch {
         }
 
-        
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
