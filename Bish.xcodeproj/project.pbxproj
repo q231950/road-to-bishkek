@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3B0D2DD91ED8D32900ADAA24 /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0D2DD81ED8D32900ADAA24 /* CreditsViewController.swift */; };
 		3B0D2DDB1ED9D5D200ADAA24 /* DistanceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0D2DDA1ED9D5D200ADAA24 /* DistanceViewModel.swift */; };
+		3B2252121F09159E009619B2 /* CitySelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2252111F09159E009619B2 /* CitySelectionViewController.swift */; };
+		3B2252161F097AB5009619B2 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2252151F097AB5009619B2 /* City.swift */; };
 		3B3A27331ED8C6E00065AF68 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3A27241ED8C6E00065AF68 /* AppDelegate.swift */; };
 		3B3A27341ED8C6E00065AF68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B3A27251ED8C6E00065AF68 /* Assets.xcassets */; };
 		3B3A27351ED8C6E00065AF68 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B3A27261ED8C6E00065AF68 /* LaunchScreen.storyboard */; };
@@ -22,6 +24,8 @@
 		3B6B9D851EDA252C009E622D /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6B9D841EDA252C009E622D /* WeatherViewController.swift */; };
 		3B85863E1EDF55E100157DF6 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B85863D1EDF55E100157DF6 /* WeatherViewModel.swift */; };
 		3B8586401EDF582800157DF6 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B85863F1EDF582800157DF6 /* StringExtensions.swift */; };
+		3B888F6E1F0ACE51007355AB /* BishDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3B888F6C1F0ACE51007355AB /* BishDataModel.xcdatamodeld */; };
+		3B888F931F0AD3C0007355AB /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B888F921F0AD3C0007355AB /* DataStore.swift */; };
 		3BBF60321EF3E5FA0066644E /* CityCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF60311EF3E5FA0066644E /* CityCloud.swift */; };
 		3BBF603A1EF3E7810066644E /* CityCloudTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF60391EF3E7810066644E /* CityCloudTests.swift */; };
 		3BC4E1B31ED77309001636D1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BC4E1B21ED77309001636D1 /* CoreLocation.framework */; };
@@ -42,6 +46,8 @@
 /* Begin PBXFileReference section */
 		3B0D2DD81ED8D32900ADAA24 /* CreditsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
 		3B0D2DDA1ED9D5D200ADAA24 /* DistanceViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistanceViewModel.swift; sourceTree = "<group>"; };
+		3B2252111F09159E009619B2 /* CitySelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySelectionViewController.swift; sourceTree = "<group>"; };
+		3B2252151F097AB5009619B2 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		3B3A27241ED8C6E00065AF68 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B3A27251ED8C6E00065AF68 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B3A27271ED8C6E00065AF68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -57,6 +63,8 @@
 		3B6B9D841EDA252C009E622D /* WeatherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		3B85863D1EDF55E100157DF6 /* WeatherViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		3B85863F1EDF582800157DF6 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		3B888F6D1F0ACE51007355AB /* BishDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BishDataModel.xcdatamodel; sourceTree = "<group>"; };
+		3B888F921F0AD3C0007355AB /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		3BBF60311EF3E5FA0066644E /* CityCloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCloud.swift; sourceTree = "<group>"; };
 		3BBF60371EF3E7810066644E /* BishTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BishTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BBF60391EF3E7810066644E /* CityCloudTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCloudTests.swift; sourceTree = "<group>"; };
@@ -124,6 +132,7 @@
 				3BBF60301EF3E59A0066644E /* Cities */,
 				3B1D887E1EFB89D800FFC644 /* Settings */,
 				3B0D2DD61ED8C83900ADAA24 /* Distance View Controller */,
+				3B888F6B1F0ACE16007355AB /* Core Data */,
 				3BEB7DC31EF3C2A60081BB97 /* Bish.entitlements */,
 				3B3A27251ED8C6E00065AF68 /* Assets.xcassets */,
 				3B3A27261ED8C6E00065AF68 /* LaunchScreen.storyboard */,
@@ -146,10 +155,21 @@
 			name = Weather;
 			sourceTree = "<group>";
 		};
+		3B888F6B1F0ACE16007355AB /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				3B888F6C1F0ACE51007355AB /* BishDataModel.xcdatamodeld */,
+				3B888F921F0AD3C0007355AB /* DataStore.swift */,
+			);
+			path = "Core Data";
+			sourceTree = "<group>";
+		};
 		3BBF60301EF3E59A0066644E /* Cities */ = {
 			isa = PBXGroup;
 			children = (
 				3BBF60311EF3E5FA0066644E /* CityCloud.swift */,
+				3B2252111F09159E009619B2 /* CitySelectionViewController.swift */,
+				3B2252151F097AB5009619B2 /* City.swift */,
 			);
 			path = Cities;
 			sourceTree = "<group>";
@@ -236,17 +256,19 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = elbedev.com;
 				TargetAttributes = {
 					3BBF60361EF3E7810066644E = {
 						CreatedOnToolsVersion = 9.0;
 						DevelopmentTeam = X29V4JPQ55;
+						LastSwiftMigration = 0900;
 						TestTargetID = 3BC4E19B1ED772C8001636D1;
 					};
 					3BC4E19B1ED772C8001636D1 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = X29V4JPQ55;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
@@ -322,9 +344,13 @@
 				3B0D2DDB1ED9D5D200ADAA24 /* DistanceViewModel.swift in Sources */,
 				3B8586401EDF582800157DF6 /* StringExtensions.swift in Sources */,
 				3B0D2DD91ED8D32900ADAA24 /* CreditsViewController.swift in Sources */,
+				3B888F6E1F0ACE51007355AB /* BishDataModel.xcdatamodeld in Sources */,
 				3B6B9D851EDA252C009E622D /* WeatherViewController.swift in Sources */,
 				3B85863E1EDF55E100157DF6 /* WeatherViewModel.swift in Sources */,
 				3B3A27331ED8C6E00065AF68 /* AppDelegate.swift in Sources */,
+				3B2252121F09159E009619B2 /* CitySelectionViewController.swift in Sources */,
+				3B2252161F097AB5009619B2 /* City.swift in Sources */,
+				3B888F931F0AD3C0007355AB /* DataStore.swift in Sources */,
 				3B6B9D811EDA18F8009E622D /* WeatherProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -402,6 +428,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.elbedev.BishTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bish.app/Bish";
@@ -426,6 +453,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.elbedev.BishTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bish.app/Bish";
@@ -443,7 +471,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -451,7 +481,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -495,7 +529,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -503,7 +539,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -536,11 +576,12 @@
 				CODE_SIGN_ENTITLEMENTS = Bish/Bish.entitlements;
 				DEVELOPMENT_TEAM = X29V4JPQ55;
 				INFOPLIST_FILE = "$(SRCROOT)/Bish/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.elbedev.bish;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -551,11 +592,12 @@
 				CODE_SIGN_ENTITLEMENTS = Bish/Bish.entitlements;
 				DEVELOPMENT_TEAM = X29V4JPQ55;
 				INFOPLIST_FILE = "$(SRCROOT)/Bish/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.elbedev.bish;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -590,6 +632,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3B888F6C1F0ACE51007355AB /* BishDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3B888F6D1F0ACE51007355AB /* BishDataModel.xcdatamodel */,
+			);
+			currentVersion = 3B888F6D1F0ACE51007355AB /* BishDataModel.xcdatamodel */;
+			path = BishDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3BC4E1941ED772C8001636D1 /* Project object */;
 }
