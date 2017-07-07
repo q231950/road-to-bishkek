@@ -142,7 +142,7 @@ extension DistanceViewController: CLLocationManagerDelegate {
         let cityLocation = CLLocation(latitude: city.latitude, longitude: city.longitude)
         let distance = location.distance(from: cityLocation)
         if let identifier = city.geonameid {
-            let cityModel = City(identifier:identifier, name: city.name ?? "", location: cityLocation)
+            let cityModel = City(identifier:identifier, countryCode: city.countryCode ?? "", name: city.name ?? "", location: cityLocation)
             self.viewModel = DistanceViewModel(city: cityModel, distance: distance)
         }
     }

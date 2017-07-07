@@ -19,7 +19,7 @@ public class CityCloud {
             }
             
             let predicate = NSPredicate(format: "self CONTAINS '\(name)'")
-            let query = CKQuery(recordType: "Cities", predicate: predicate)
+            let query = CKQuery(recordType: "City", predicate: predicate)
             let database = CKContainer.default().publicCloudDatabase
             database.perform(query, inZoneWith: nil) { (records: [CKRecord]?, error: Error?) in
                 if let error = error {
@@ -34,6 +34,13 @@ public class CityCloud {
                         name = NSLocalizedString("n/a", comment: "The name of a city when the name is not available")
                     }
 
+                    let countryCode: String
+                    if let c = record.object(forKey: "countrycode") as? String {
+                        countryCode = c
+                    } else {
+                        countryCode = NSLocalizedString("n/a", comment: "The country code of a city when the code is not available")
+                    }
+
                     let location: CLLocation
                     if let l = record.object(forKey: "location") as? CLLocation {
                         location = l
@@ -45,10 +52,10 @@ public class CityCloud {
                     if let i = record.object(forKey: "geonameid") as? String {
                         identifier = i
                     } else {
-                        identifier = NSLocalizedString("n/a", comment: "The identifier of a city when the name is not available")
+                        identifier = NSLocalizedString("n/a", comment: "The identifier of a city when the identifier is not available")
                     }
 
-                    return City(identifier:identifier, name: name, location: location)
+                    return City(identifier:identifier, countryCode: countryCode, name: name, location: location)
                 })
                 completion(cities, nil)
             }

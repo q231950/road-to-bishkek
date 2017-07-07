@@ -10,8 +10,8 @@ import Foundation
 
 class WeatherProvider {
     
-    public func weather(in city:String, completion: @escaping ((WeatherViewModel?, Error?) -> Swift.Void)) {
-        if let url = URL(string: "https://api.apixu.com/v1/current.json?key=\(ApiKey.weather.rawValue)&q=\(city)") {
+    public func weather(in city:City, completion: @escaping ((WeatherViewModel?, Error?) -> Swift.Void)) {
+        if let url = URL(string: "https://api.apixu.com/v1/current.json?key=\(ApiKey.weather.rawValue)&q=\(city.location.coordinate.latitude),\(city.location.coordinate.longitude)") {
             let dataTask = URLSession.shared.dataTask(with: url, completionHandler: { (data: Data?, response: URLResponse?, error: Error?) in
                 
                 if let data = data {
