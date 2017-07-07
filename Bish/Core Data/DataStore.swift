@@ -11,6 +11,53 @@ import CoreData
 class DataStore {
 
     public static let shared = DataStore()
+
+    public func createCity(_ city: City) throws -> CityManagedObject {
+        let cityManagedObject = NSManagedObject(entity: CityManagedObject.entity(),
+                                                insertInto: persistentContainer.viewContext) as! CityManagedObject
+        cityManagedObject.name = city.name
+        cityManagedObject.geonameid = city.identifier
+        cityManagedObject.latitude = city.location.coordinate.latitude
+        cityManagedObject.longitude = city.location.coordinate.longitude
+
+        saveContext()
+        return cityManagedObject
+    }
+
+    public func select(_ city: City) throws {
+        let cityManagedObject = try managed(city)
+        cityManagedObject.selected = !cityManagedObject.selected
+    }
+
+    public func deselectAllCities() throws {
+        if let name = CityManagedObject.entity().name {
+            let request = NSFetchRequest<CityManagedObject>(entityName: name)
+            let storeResult = try persistentContainer.viewContext.fetch(request)
+            storeResult.forEach({ (cityManagedObject) in
+                cityManagedObject.selected = false
+            })
+        }
+    }
+
+    public func managed(_ city: City) throws -> CityManagedObject {
+        if let cityManagedObject = try cityManagedObjectWithGeoNameIdentifier(city.identifier) {
+            return cityManagedObject
+        } else {
+            return try DataStore.shared.createCity(city)
+        }
+    }
+
+    public func cityManagedObjectWithGeoNameIdentifier(_ identifier: String) throws -> CityManagedObject? {
+        if let name = CityManagedObject.entity().name {
+            let request = NSFetchRequest<CityManagedObject>(entityName: name)
+            request.predicate = NSPredicate(format: "geonameid == '\(identifier)'")
+            let storeResult = try persistentContainer.viewContext.fetch(request)
+            return storeResult.first
+        }
+
+        return nil
+    }
+
     // MARK: - Core Data stack
 
     lazy var persistentContainer: NSPersistentContainer = {
