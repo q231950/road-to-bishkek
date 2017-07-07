@@ -20,6 +20,11 @@ public class CityCloud {
             
             let predicate = NSPredicate(format: "self CONTAINS '\(name)'")
             let query = CKQuery(recordType: "City", predicate: predicate)
+            let countrySortDescriptor = NSSortDescriptor(key: "countrycode", ascending: true)
+            let nameSortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+            query.sortDescriptors = [nameSortDescriptor, countrySortDescriptor]
+
+
             let database = CKContainer.default().publicCloudDatabase
             database.perform(query, inZoneWith: nil) { (records: [CKRecord]?, error: Error?) in
                 if let error = error {

@@ -95,7 +95,8 @@ extension CitySelectionViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cityCell", for: indexPath)
 
         let city = filteredCities[indexPath.row]
-            cell.textLabel?.text = city.name
+        cell.textLabel?.text = city.name
+        cell.detailTextLabel?.text = city.countryCode
 
         if let selectedCity = selectedCity {
             cell.accessoryType = selectedCity == city ? .checkmark : .none
@@ -120,6 +121,7 @@ extension CitySelectionViewController {
         }
 
         DispatchQueue.main.async {
+            self.navigationItem.searchController?.isActive = false
             self.tableView.reloadData()
         }
     }
