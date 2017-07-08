@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import CloudKit
 
 class CitySelectionViewController: UITableViewController {
 
@@ -17,6 +18,7 @@ class CitySelectionViewController: UITableViewController {
     private var searchTermChanged = false
     private var searchTerm: String?
     private var updateTimer: Timer!
+    private var cursor: CKQueryCursor?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +37,7 @@ class CitySelectionViewController: UITableViewController {
         navigationItem.searchController?.searchResultsUpdater = self
         navigationItem.searchController?.dimsBackgroundDuringPresentation = false
         navigationItem.hidesSearchBarWhenScrolling = false
+        navigationItem.searchController?.searchBar.delegate = self
         definesPresentationContext = true
     }
 
@@ -52,12 +55,18 @@ class CitySelectionViewController: UITableViewController {
 
     private func setupTimer() {
         updateTimer = Timer.scheduledTimer(withTimeInterval: 2, repeats: true, block: { [weak self] (_) in
-            self?.updateResults()
+            self?.updateResults(cursor: self?.cursor)
         })
     }
 }
 
 extension CitySelectionViewController: UISearchResultsUpdating {
+
+    func loadMore() {
+        searchTermChanged = true
+        updateResults(cursor: cursor)
+    }
+
     func updateSearchResults(for searchController: UISearchController) {
         guard let name = searchController.searchBar.text, name.count > 0 else {
             return
@@ -67,7 +76,7 @@ extension CitySelectionViewController: UISearchResultsUpdating {
         searchTermChanged = true
     }
 
-    private func updateResults() {
+    private func updateResults(cursor: CKQueryCursor?) {
 
         guard let name = searchTerm, searchTermChanged == true else {
             return
@@ -75,17 +84,38 @@ extension CitySelectionViewController: UISearchResultsUpdating {
 
         searchTermChanged = false
 
-        cloud.citiesNamed(name) { (cities, error) in
-            if let cities = cities {
-                self.filteredCities = cities
-            } else {
-                self.filteredCities.removeAll()
-            }
+        var newCursor: CKQueryCursor?
 
+        if cursor == nil {
+            filteredCities.removeAll()
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
+        } else {
+            newCursor = cursor
+            self.cursor = nil
         }
+
+//        DispatchQueue.main.async {
+//            self.tableView.performBatchUpdates({
+                self.cloud.citiesNamed(name, cursor: newCursor, completion: { (city, error) in
+                    if let city = city {
+                        self.filteredCities.append(city)
+                    }
+
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+//                        let indexPath = IndexPath.init(row: self.filteredCities.count-1, section: 0)
+//                        self.tableView.insertRows(at: [indexPath], with: .fade)
+                    }
+                }, next: { (cursor) in
+                    self.cursor = cursor
+                })
+//            }) { (done) in
+//
+//            }
+//        }
+
     }
 }
 
@@ -102,6 +132,9 @@ extension CitySelectionViewController {
             cell.accessoryType = selectedCity == city ? .checkmark : .none
         }
 
+        if indexPath.row == filteredCities.count - 1 && cursor != nil {
+            loadMore()
+        }
         return cell
     }
 
@@ -124,5 +157,14 @@ extension CitySelectionViewController {
             self.navigationItem.searchController?.isActive = false
             self.tableView.reloadData()
         }
+    }
+}
+
+extension CitySelectionViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+    }
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.cursor = nil
     }
 }
