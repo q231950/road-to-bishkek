@@ -17,17 +17,6 @@ public class CityCloud {
         queue.qualityOfService = .userInitiated
     }
 
-    private func predicateFormat(tokenString: String) -> String {
-        let contains = tokenString.split(separator: " ").enumerated().map { (arg) -> String in
-
-            let (index, element) = arg
-            let and = index == 0 ? "":" AND"
-            return "\(and) self CONTAINS '\(element)'"
-        }
-
-        return contains.joined()
-    }
-    
     public func citiesNamed(_ name: String, cursor: CKQueryCursor?, completion: @escaping ((City?, Error?) -> Void), next: @escaping (CKQueryCursor?) -> Void ) {
         CKContainer.default().accountStatus { (accountStatus, error) in
             guard error == nil else {
@@ -40,13 +29,7 @@ public class CityCloud {
             if let c = cursor {
                 operation = CKQueryOperation(cursor: c)
             } else {
-                let format = self.predicateFormat(tokenString: name)
-                let predicate = NSPredicate(format: format)
-                let query = CKQuery(recordType: "City", predicate: predicate)
-                let nameSortDescriptor = NSSortDescriptor(key: "name", ascending: true)
-                let countrySortDescriptor = NSSortDescriptor(key: "countrycode", ascending: true)
-                query.sortDescriptors = [nameSortDescriptor, countrySortDescriptor]
-                
+                let query = self.initialQueryForCities(named: name)
                 operation = CKQueryOperation(query: query)
             }
             operation.database = database
@@ -87,5 +70,26 @@ public class CityCloud {
             }
             self.queue.addOperation(operation)
         }
+    }
+
+    private func initialQueryForCities(named name: String) -> CKQuery {
+        let format = self.predicateFormat(tokenString: name)
+        let predicate = NSPredicate(format: format)
+        let query = CKQuery(recordType: "City", predicate: predicate)
+        let nameSortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+        let countrySortDescriptor = NSSortDescriptor(key: "countrycode", ascending: true)
+        query.sortDescriptors = [nameSortDescriptor, countrySortDescriptor]
+        return query
+    }
+
+    private func predicateFormat(tokenString: String) -> String {
+        let contains = tokenString.split(separator: " ").enumerated().map { (arg) -> String in
+
+            let (index, element) = arg
+            let and = index == 0 ? "":" AND"
+            return "\(and) self CONTAINS '\(element)'"
+        }
+
+        return contains.joined()
     }
 }

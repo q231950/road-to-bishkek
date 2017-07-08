@@ -95,27 +95,18 @@ extension CitySelectionViewController: UISearchResultsUpdating {
             newCursor = cursor
             self.cursor = nil
         }
+        
+        self.cloud.citiesNamed(name, cursor: newCursor, completion: { (city, error) in
+            if let city = city {
+                self.filteredCities.append(city)
+            }
 
-//        DispatchQueue.main.async {
-//            self.tableView.performBatchUpdates({
-                self.cloud.citiesNamed(name, cursor: newCursor, completion: { (city, error) in
-                    if let city = city {
-                        self.filteredCities.append(city)
-                    }
-
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
-//                        let indexPath = IndexPath.init(row: self.filteredCities.count-1, section: 0)
-//                        self.tableView.insertRows(at: [indexPath], with: .fade)
-                    }
-                }, next: { (cursor) in
-                    self.cursor = cursor
-                })
-//            }) { (done) in
-//
-//            }
-//        }
-
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }, next: { (cursor) in
+            self.cursor = cursor
+        })
     }
 }
 
@@ -144,13 +135,13 @@ extension CitySelectionViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let city = filteredCities[indexPath.row]
-            selectedCity = city
+        selectedCity = city
 
-            do {
-                try DataStore.shared.deselectAllCities()
-                try DataStore.shared.select(city)
-                DataStore.shared.saveContext()
-            } catch {
+        do {
+            try DataStore.shared.deselectAllCities()
+            try DataStore.shared.select(city)
+            DataStore.shared.saveContext()
+        } catch {
         }
 
         DispatchQueue.main.async {
