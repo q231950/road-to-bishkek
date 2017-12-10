@@ -1,0 +1,13 @@
+node {
+    stage("SCM") {
+        checkout scm
+    }
+
+    stage("Configure") {
+        sh 'echo "put all ruby stuff into Gemfile"'
+    }
+
+    stage("Test") {
+        sh 'fastlane test'
+    }
+}
